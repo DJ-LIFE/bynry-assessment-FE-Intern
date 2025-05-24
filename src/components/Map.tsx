@@ -21,11 +21,14 @@ export const Map = ({
 }) => {
 	if (!coordinates) return null;
 	return (
-		<div className="h-[300px] container mx-auto w-full mt-4 border mb-40">
+		<div className="h-[300px] max-w-100 container mx-auto w-full mt-4 border border-neutral-300 rounded-md mb-40">
 			{" "}
 			<MapContainer
 				center={[coordinates.lat, coordinates.lng]}
 				zoom={13}
+				scrollWheelZoom={true}
+				dragging={true}
+				doubleClickZoom={true}
 				style={{ height: "100%", width: "100%" }}
 			>
 				<TileLayer
