@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@layer base {
+	:root {
+		--font-inter: Inter, sans-serif;
+		--font-opensans: "Open Sans", sans-serif;
+		--font-poppins: Poppins, sans-serif;
+	}
+}
+
+@layer utilities {
+	.font-inter {
+		font-family: var(--font-inter);
+	}
+	.font-opensans {
+		font-family: var(--font-opensans);
+	}
+	.font-poppins {
+		font-family: var(--font-poppins);
+	}
+}
+
+/* Leaflet map styles */
+.leaflet-container {
+	height: 100%;
+	width: 100%;
+}
