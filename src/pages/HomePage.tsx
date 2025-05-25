@@ -1,19 +1,36 @@
 import { Map } from "@/components/Map";
 import { ProfileCard } from "@/components/ProfileCard";
-import { profiles } from "@/data/profiles";
-import { useState } from "react";
+import SearchAndFilter from "@/components/SearchAndFilter";
+import { useProfileContext } from "@/contexts/ProfileContext";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
 const HomePage = () => {
+	const { profiles } = useProfileContext();
 	const [popup, setPopup] = useState<number | null>(null);
+	const [searchTerm, setSearchTerm] = useState("");
+	const filteredProfiles = profiles.filter((profile) =>
+		profile.name.toLowerCase().includes(searchTerm.toLowerCase())
+	);
 	const navigate = useNavigate();
 	const handleMap = (id: number) => {
 		setPopup(popup === id ? null : id);
 	};
+	useEffect(() => {
+	}, [filteredProfiles])
 	return (
 		<>
-			<div className="container mx-auto flex justify-center items-center mt-20 gap-4">
-				{profiles.map((data, index) => (
+			{" "}
+			<div className="container mx-auto my-10">
+				<SearchAndFilter
+					onChange={(e) => {
+						setSearchTerm(e.target.value);
+					}}
+					searchTerm={searchTerm}
+				/>
+			</div>
+			<div className="container mx-auto px-4 pb-10 md:px-40 grid grid-cols-1 md:grid-cols-3 justify-center items-center mt-20 gap-4">
+				{filteredProfiles.map((data, index) => (
 					<>
 						<div
 							key={index}

@@ -11,7 +11,7 @@ export const ProfileCard = ({
 	onClickSummary,
 }: ProfileProps) => {
 	return (
-		<div className="hover:shadow-xl shadow-md transition ease-in-out cursor-pointer flex flex-col justify-center items-center border border-neutral-200 rounded-4xl max-w-90 p-2 space-y-4">
+		<div className="hover:shadow-xl shadow-md bg-white transition ease-in-out cursor-pointer flex flex-col justify-center items-center border border-neutral-200 rounded-4xl max-w-90 p-2 space-y-4">
 			<img
 				src={img}
 				alt={name}
