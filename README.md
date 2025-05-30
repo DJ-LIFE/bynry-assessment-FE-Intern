@@ -1,4 +1,4 @@
-# Bynry Assessment - Profile Management Application
+# Profile Management Application
 
 A modern React application for managing user profiles with interactive maps, built with TypeScript, Vite, and Tailwind CSS.
 
